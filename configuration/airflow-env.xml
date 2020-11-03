@@ -22,24 +22,15 @@
 
 <configuration>
     <property>
-        <name>jupyter_port</name>
-        <display-name>Jupyter Port</display-name>
+        <name>binary_directory</name>
+        <display-name>Python Path</display-name>
+        <value>/opt/anaconda/bin</value>
+        <description>PATH to run binaries</description>
+    </property>
+    <property>
+        <name>webserver_port</name>
+        <display-name>WebServer port</display-name>
         <value>8085</value>
-        <description>Port to run jupyter</description>
+        <description>Port on which server will be running</description>
     </property>
-
-    <property>
-        <name>jupyter_password</name>
-        <display-name>Jupyter Password</display-name>
-        <value>headlabs</value>
-        <description>Password to run jupyter</description>
-    </property>
-
-    <property>
-        <name>jupyter_root_dir</name>
-        <display-name>Jupyter Root Directory</display-name>
-        <value>/</value>
-        <description>Root directory in jupyter</description>
-    </property>
-
 </configuration>

@@ -16,27 +16,7 @@ import hashlib
 from resource_management import *
 import random
 
-def cast_bytes(s):
-    if not isinstance(s, bytes):
-        return s.encode('ascii', "replace")
-    return s
-
-def hashText(text):
-    h = hashlib.new('sha1')
-    salt_len = 12
-    salt = ('%0' + str(salt_len) + 'x') % random.getrandbits(4 * salt_len)
-    h.update(text.encode() + salt.encode())
-
-    return ':'.join(('sha1', salt, h.hexdigest()))
-
 config = Script.get_config()
 
-config_dir = "/opt/jupyter/"
-jupyter_port = config['configurations']['jupyter-env']['jupyter_port']
-jupyter_password = config['configurations']['jupyter-env']['jupyter_password']
-jupyter_root_dir = config['configurations']['jupyter-env']['jupyter_root_dir']
-
-anaconda_user = 'root'
-anaconda_group = 'root'
-
-client_port = config['configurations']['port-forward-env']['port_forward']
+binary_directory = config['configurations']['airflow-env']['binary_directory']
+webserver_port = config['configurations']['airflow-env']['webserver_port']

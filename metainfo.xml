@@ -3,34 +3,23 @@
   <schemaVersion>2.0</schemaVersion>
   <services>
     <service>
-      <name>Jupyter3</name>
-      <displayName>Jupyter</displayName>
-      <comment>Jupyter is cool</comment>
-      <version>182</version>
+      <name>Airflow service</name>
+      <displayName>Airflow</displayName>
+      <comment>Airflow is cool</comment>
+      <version>179</version>
       <components>
         <component>
-          <name>Anaconda</name>
-          <displayName>Anaconda</displayName>
+          <name>Airflow</name>
+          <displayName>Airflow</displayName>
           <category>MASTER</category>
           <cardinality>1</cardinality>
           <commandScript>
-            <script>scripts/jupyter.py</script>
+            <script>scripts/airflow.py</script>
             <scriptType>PYTHON</scriptType>
             <timeout>300</timeout>
           </commandScript>
         </component>
 
-        <component>
-          <name>PortForwarding</name>
-          <displayName>Port forward</displayName>
-          <category>MASTER</category>
-          <cardinality>1</cardinality>
-          <commandScript>
-            <script>scripts/port_forward.py</script>
-            <scriptType>PYTHON</scriptType>
-            <timeout>300</timeout>
-          </commandScript>
-        </component>
       </components>
 
       <osSpecifics>
@@ -46,8 +35,7 @@
       </commandScript>
 
       <configuration-dependencies>
-        <config-type>jupyter-env</config-type>
-        <config-type>port-forward-env</config-type>
+        <config-type>airflow-env</config-type>
       </configuration-dependencies>
     </service>
   </services>
