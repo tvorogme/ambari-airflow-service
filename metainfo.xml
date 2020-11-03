@@ -6,7 +6,7 @@
       <name>Airflow service</name>
       <displayName>Airflow</displayName>
       <comment>Airflow is cool</comment>
-      <version>179</version>
+      <version>57</version>
       <components>
         <component>
           <name>Airflow</name>

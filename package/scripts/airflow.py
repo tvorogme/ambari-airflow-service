@@ -1,41 +1,43 @@
 from resource_management import *
-from anaconda_base import AnacondaBase
+from airflow_base import AirflowBase
 from resource_management.core.exceptions import ExecutionFailed
 import subprocess
 
-class JupyterServer(AnacondaBase):
+class AirflowServer(AirflowBase):
 
     def install(self, env):
         import params
         env.set_params(params)
-        self.install_ac(env)
-        print("Installing Ancaonda")
+        self.install_airflow(env)
+        print("Installing Airflow")
 
     def configure(self, env):
         import params
         env.set_params(params)
-        self.configure_ac(env)
-        reload_cmd = format("service jupyter reload")
-        Execute(reload_cmd)
+        self.configure_airflow(env)
+        Execute("service webserver reload")
+        Execute("service scheduler reload")
 
     def start(self, env):
-        print("Starting jupyter")
-        start_cmd = format("service jupyter start")
-        Execute(start_cmd)
+        print("Starting airflow")
+        Execute("service webserver start")
+        Execute("service scheduler start")
 
     def stop(self, env):
-        print("Stopping jupyter")
-        stop_cmd = format("service jupyter stop")
-        Execute(stop_cmd)
+        print("Stopping airflow")
+        Execute("service webserver stop")
+        Execute("service scheduler stop")
 
     def restart(self, env):
-        self.configure_ac(env)
-        print("Restartarting jupyter")
-        Execute('service jupyter restart')
+        self.configure_airflow(env)
+        print("Restartarting airflow")
+        Execute("service webserver restart")
+        Execute("service scheduler restart")
 
     def status(self, env):
-        print("Checking jupyter status...")
-        Execute('service jupyter status')
+        print("Checking airflow status...")
+        Execute('service webserver status')
+        Execute("service scheduler status")
 
 if __name__ == "__main__":
     JupyterServer().execute()

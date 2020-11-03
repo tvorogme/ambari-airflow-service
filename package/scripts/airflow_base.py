@@ -40,6 +40,5 @@ class AirflowBase(Script):
              mode=0o0600
              )
 
-
     def install(self, env):
         self.install_airflow(self, env)

@@ -21,7 +21,9 @@ class ServiceCheck(Script):
     def service_check(self, env):
         import params
         env.set_params(params)
-        Execute('service jupyter status')
+        Execute('service webserver status')
+        Execute("service scheduler status")
+
 
 if __name__ == "__main__":
     ServiceCheck().execute()
