@@ -40,4 +40,4 @@ class AirflowServer(AirflowBase):
         Execute("service scheduler status")
 
 if __name__ == "__main__":
-    JupyterServer().execute()
+    AirflowServer().execute()
