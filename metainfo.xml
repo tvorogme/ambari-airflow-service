@@ -3,7 +3,7 @@
   <schemaVersion>2.0</schemaVersion>
   <services>
     <service>
-      <name>Airflow service</name>
+      <name>AIRFLOW_CUSTOM</name>
       <displayName>Airflow</displayName>
       <comment>Airflow is cool</comment>
       <version>57</version>
