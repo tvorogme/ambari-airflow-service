@@ -19,8 +19,8 @@ class AirflowBase(Script):
                   group='airflow',
                   mode=0o0755)
 
-        Execute('/opt/anaconda/bin/airflow initdb')
-        
+        Execute('export AIRFLOW_HOME={0} && /opt/anaconda/bin/airflow initdb'.format(params.airflow_home_directory))
+
         try:
             self.configure_airflow(env)
         except ExecutionFailed as ef:
@@ -47,6 +47,8 @@ class AirflowBase(Script):
              group='root',
              mode=0o0600
              )
+
+        Execute('sudo systemctl daemon-reload')
 
     def install(self, env):
         self.install_airflow(self, env)

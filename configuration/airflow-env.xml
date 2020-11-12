@@ -23,9 +23,9 @@
 <configuration>
     <property>
         <name>binary_directory</name>
-        <display-name>Python Path</display-name>
-        <value>/opt/anaconda/bin</value>
-        <description>PATH to run binaries</description>
+        <display-name>Airflow Path</display-name>
+        <value>/opt/airflow</value>
+        <description>PATH to airflow home directory</description>
     </property>
     <property>
         <name>airflow_home_directory</name>
