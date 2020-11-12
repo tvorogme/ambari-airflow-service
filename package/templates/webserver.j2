@@ -6,8 +6,8 @@ Wants=postgresql.service
 [Service]
 Environment=AIRFLOW_HOME={{airflow_home_directory}}
 Environment=PATH={{binary_directory}}
-User=airflow
-Group=airflow
+User=root
+Group=root
 Type=simple
 ExecStart={{binary_directory}}/airflow webserver -p {{webserver_port}}
 Restart=always
