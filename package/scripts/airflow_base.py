@@ -15,8 +15,8 @@ class AirflowBase(Script):
         Execute('/opt/anaconda/bin/pip3 install apache-airflow==1.10.12 --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-1.10.12/constraints-3.8.txt"')
         Directory(params.airflow_home_directory,
                   create_parents=True,
-                  owner='airflow',
-                  group='airflow',
+                  owner='root',
+                  group='root',
                   mode=0o0755)
 
         Execute('export AIRFLOW_HOME={0} && /opt/anaconda/bin/airflow initdb'.format(params.airflow_home_directory))
