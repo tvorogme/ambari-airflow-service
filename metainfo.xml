@@ -20,8 +20,8 @@
           </commandScript>
         </component>
         <component>
-          <name>PortForwarding</name>
-          <displayName>Port forward</displayName>
+          <name>AirflowPortForwarding</name>
+          <displayName>Airflow port forward</displayName>
           <category>MASTER</category>
           <cardinality>1</cardinality>
           <commandScript>
