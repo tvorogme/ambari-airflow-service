@@ -1,15 +1,16 @@
 [Unit]
 Description=Airflow webserver daemon
-After=network.target postgresql.service mysql.service redis.service rabbitmq-server.service
-Wants=postgresql.service mysql.service redis.service rabbitmq-server.service
+After=network.target postgresql.service
+Wants=postgresql.service
 
 [Service]
-EnvironmentFile=/etc/sysconfig/airflow
+Environment=AIRFLOW_HOME={{airflow_home_directory}}
+Environment=PATH={{binary_directory}}
 User=airflow
 Group=airflow
 Type=simple
 ExecStart={{binary_directory}}/airflow webserver -p {{webserver_port}}
-Restart=on-failure
+Restart=always
 RestartSec=5s
 PrivateTmp=true
 

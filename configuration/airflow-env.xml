@@ -28,6 +28,12 @@
         <description>PATH to run binaries</description>
     </property>
     <property>
+        <name>airflow_home_directory</name>
+        <display-name>Python Path</display-name>
+        <value>/opt/anaconda/bin</value>
+        <description>PATH to run binaries</description>
+    </property>
+    <property>
         <name>webserver_port</name>
         <display-name>WebServer port</display-name>
         <value>8085</value>

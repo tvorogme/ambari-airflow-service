@@ -4,7 +4,8 @@ After=network.target postgresql.service mysql.service redis.service rabbitmq-ser
 Wants=postgresql.service mysql.service redis.service rabbitmq-server.service
 
 [Service]
-EnvironmentFile=/etc/sysconfig/airflow
+Environment=AIRFLOW_HOME={{airflow_home_directory}}
+Environment=PATH={{binary_directory}}
 User=airflow
 Group=airflow
 Type=simple

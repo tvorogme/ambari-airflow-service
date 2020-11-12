@@ -13,12 +13,20 @@ class AirflowBase(Script):
         Execute("/opt/anaconda/bin/pip3 install 'pyqtwebengine<5.13' --force-reinstall")
         Execute('/opt/anaconda/bin/pip3 install "pyqt5<5.13" --force-reinstall')
         Execute('/opt/anaconda/bin/pip3 install apache-airflow==1.10.12 --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-1.10.12/constraints-3.8.txt"')
+        Directory(params.airflow_home_directory,
+                  create_parents=True,
+                  owner='airflow',
+                  group='airflow',
+                  mode=0o0755)
 
+        Execute('/opt/anaconda/bin/airflow initdb')
+        
         try:
             self.configure_airflow(env)
         except ExecutionFailed as ef:
             print("Error {0}".format(ef))
             return
+
 
     def configure_airflow(self, env):
         import params
