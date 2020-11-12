@@ -1,0 +1,11 @@
+[Unit]
+Description=Setup a remote tunnel to Anaconda
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/ssh -o GatewayPorts=true -nNT -L {{client_port}}:0.0.0.0:{{webserver_port}} {{webserver_host}}
+RestartSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

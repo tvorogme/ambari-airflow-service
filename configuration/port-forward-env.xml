@@ -22,27 +22,9 @@
 
 <configuration>
     <property>
-        <name>airflow_home_directory</name>
-        <display-name>Airflow Path</display-name>
-        <value>/opt/airflow</value>
-        <description>PATH to airflow home directory</description>
-    </property>
-    <property>
-        <name>binary_directory</name>
-        <display-name>Python Path</display-name>
-        <value>/opt/anaconda/bin</value>
-        <description>PATH to run binaries</description>
-    </property>
-    <property>
-        <name>webserver_port</name>
-        <display-name>WebServer port</display-name>
-        <value>8086</value>
-        <description>Port on which server will be running</description>
-    </property>
-    <property>
-        <name>webserver_host</name>
-        <display-name>WebServer host</display-name>
-        <value>8085</value>
-        <description>Port on which server will be running</description>
+        <name>port_forward</name>
+        <display-name>Client Port</display-name>
+        <value>8874</value>
+        <description>Port to forward airflow on client</description>
     </property>
 </configuration>

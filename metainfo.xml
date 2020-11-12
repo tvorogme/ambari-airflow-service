@@ -6,7 +6,7 @@
       <name>AIRFLOW_CUSTOM</name>
       <displayName>Airflow</displayName>
       <comment>Airflow is cool</comment>
-      <version>57</version>
+      <version>58</version>
       <components>
         <component>
           <name>Airflow</name>
@@ -15,6 +15,17 @@
           <cardinality>1</cardinality>
           <commandScript>
             <script>scripts/airflow.py</script>
+            <scriptType>PYTHON</scriptType>
+            <timeout>300</timeout>
+          </commandScript>
+        </component>
+        <component>
+          <name>PortForwarding</name>
+          <displayName>Port forward</displayName>
+          <category>MASTER</category>
+          <cardinality>1</cardinality>
+          <commandScript>
+            <script>scripts/port_forward.py</script>
             <scriptType>PYTHON</scriptType>
             <timeout>300</timeout>
           </commandScript>
@@ -36,6 +47,7 @@
 
       <configuration-dependencies>
         <config-type>airflow-env</config-type>
+        <config-type>port-forward-env</config-type>
       </configuration-dependencies>
     </service>
   </services>

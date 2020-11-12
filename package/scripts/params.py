@@ -21,3 +21,6 @@ config = Script.get_config()
 binary_directory = config['configurations']['airflow-env']['binary_directory']
 airflow_home_directory = config['configurations']['airflow-env']['airflow_home_directory']
 webserver_port = config['configurations']['airflow-env']['webserver_port']
+webserver_host = config['configurations']['airflow-env']['webserver_host']
+
+client_port = config['configurations']['port-forward-env']['port_forward']
