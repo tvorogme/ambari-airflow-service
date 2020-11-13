@@ -22,8 +22,8 @@
 
 <configuration>
     <property>
-        <name>port_forward</name>
-        <display-name>Client Port</display-name>
+        <name>airflow_port_forward</name>
+        <display-name>Airflow Port-forward Client Port</display-name>
         <value>8874</value>
         <description>Port to forward airflow on client</description>
     </property>

@@ -35,14 +35,14 @@
     </property>
     <property>
         <name>webserver_port</name>
-        <display-name>WebServer port</display-name>
+        <display-name>Airflow WebServer port</display-name>
         <value>8086</value>
         <description>Port on which server will be running</description>
     </property>
     <property>
         <name>webserver_host</name>
-        <display-name>WebServer host</display-name>
-        <value>8085</value>
-        <description>Port on which server will be running</description>
+        <display-name>Airflow WebServer host</display-name>
+        <value>root@izb-lab01</value>
+        <description>Host on which server will be running</description>
     </property>
 </configuration>
