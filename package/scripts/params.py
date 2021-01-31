@@ -24,4 +24,4 @@ airflow_home_directory = config['configurations']['airflow-env']['airflow_home_d
 webserver_port = config['configurations']['airflow-env']['webserver_port']
 webserver_host = config['configurations']['airflow-env']['webserver_host']
 
-client_port = config['configurations']['port-forward-env']['port_forward']
+client_port = config['configurations']['port-forward-env']['airflow_port_forward']
