@@ -3,7 +3,7 @@
   <schemaVersion>2.0</schemaVersion>
   <services>
     <service>
-      <name>AIRFLOW_CUSTOM</name>
+      <name>AIRFLOW_CUSTOM_NEW</name>
       <displayName>Airflow</displayName>
       <comment>Airflow is cool</comment>
       <version>60</version>
@@ -20,7 +20,7 @@
           </commandScript>
         </component>
         <component>
-          <name>AirflowPortForwarding</name>
+          <name>AIRFLOW_PORT_FORWARD</name>
           <displayName>Airflow port forward</displayName>
           <category>MASTER</category>
           <cardinality>1</cardinality>
@@ -38,12 +38,6 @@
           <osFamily>any</osFamily>
         </osSpecific>
       </osSpecifics>
-
-      <commandScript>
-        <script>scripts/service_check.py</script>
-        <scriptType>PYTHON</scriptType>
-        <timeout>300</timeout>
-      </commandScript>
 
       <configuration-dependencies>
         <config-type>airflow-env</config-type>

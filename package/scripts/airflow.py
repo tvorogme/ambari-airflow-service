@@ -15,29 +15,29 @@ class AirflowServer(AirflowBase):
         import params
         env.set_params(params)
         self.configure_airflow(env)
-        Execute("service airflow_webserver reload")
-        Execute("service airflow_scheduler reload")
+        Execute("systemctl reload airflow_webserver")
+        Execute("systemctl reload  airflow_scheduler")
 
     def start(self, env):
         print("Starting airflow")
-        Execute("service airflow_webserver start")
-        Execute("service airflow_scheduler start")
+        Execute("systemctl start airflow_webserver")
+        Execute("systemctl start airflow_scheduler")
 
     def stop(self, env):
         print("Stopping airflow")
-        Execute("service airflow_webserver stop")
-        Execute("service airflow_scheduler stop")
+        Execute("systemctl stop airflow_webserver")
+        Execute("systemctl stop airflow_scheduler")
 
     def restart(self, env):
         self.configure_airflow(env)
         print("Restartarting airflow")
-        Execute("service airflow_webserver restart")
-        Execute("service airflow_scheduler restart")
+        Execute("systemctl restart airflow_webserver")
+        Execute("systemctl restart airflow_scheduler")
 
     def status(self, env):
         print("Checking airflow status...")
-        Execute('service airflow_webserver status')
-        Execute("service airflow_scheduler status")
+        Execute('systemctl status airflow_webserver')
+        Execute("systemctl status airflow_scheduler")
 
 if __name__ == "__main__":
     AirflowServer().execute()

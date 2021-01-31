@@ -13,7 +13,7 @@ class PortForwardBase(Script):
     def configure_ac(self, env):
         import params
         env.set_params(params)
-        print("!!!!!!!!!!!!!!!!!!!!!!!creating file!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
         File("/etc/systemd/system/airflow_portforward.service",
              content=Template("portforward_service.j2", configurations=params),
              owner='root',
