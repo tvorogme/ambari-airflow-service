@@ -1,6 +1,6 @@
 from resource_management import *
 from port_forward_base import PortForwardBase
-from resource_management.core.exceptions import ExecutionFailed
+from resource_management.core.exceptions import ExecutionFailed, ComponentIsNotRunning
 import subprocess
 
 class JupyterServer(PortForwardBase):
@@ -39,7 +39,7 @@ class JupyterServer(PortForwardBase):
         try:
             Execute('systemctl status airflow_portforward')
         except ExecutionFailed:
-            return False
+            raise ComponentIsNotRunning
 
 if __name__ == "__main__":
     JupyterServer().execute()

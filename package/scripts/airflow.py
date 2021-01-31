@@ -1,6 +1,6 @@
 from resource_management import *
 from airflow_base import AirflowBase
-from resource_management.core.exceptions import ExecutionFailed
+from resource_management.core.exceptions import ExecutionFailed, ComponentIsNotRunning
 import subprocess
 
 class AirflowServer(AirflowBase):
@@ -40,7 +40,7 @@ class AirflowServer(AirflowBase):
             Execute('systemctl status airflow_webserver')
             Execute("systemctl status airflow_scheduler")
         except ExecutionFailed:
-            return False
+            raise ComponentIsNotRunning
 
 if __name__ == "__main__":
     AirflowServer().execute()
