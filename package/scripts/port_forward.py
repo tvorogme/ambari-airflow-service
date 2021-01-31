@@ -35,7 +35,11 @@ class JupyterServer(PortForwardBase):
 
     def status(self, env):
         print("Checking portforward status...")
-        Execute('systemctl status airflow_portforward')
+
+        try:
+            Execute('systemctl status airflow_portforward')
+        except ExecutionFailed:
+            return False
 
 if __name__ == "__main__":
     JupyterServer().execute()

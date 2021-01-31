@@ -36,8 +36,11 @@ class AirflowServer(AirflowBase):
 
     def status(self, env):
         print("Checking airflow status...")
-        Execute('systemctl status airflow_webserver')
-        Execute("systemctl status airflow_scheduler")
+        try:
+            Execute('systemctl status airflow_webserver')
+            Execute("systemctl status airflow_scheduler")
+        except ExecutionFailed:
+            return False
 
 if __name__ == "__main__":
     AirflowServer().execute()
