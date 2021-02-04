@@ -22,7 +22,7 @@ class AirflowBase(Script):
 
         Execute('export AIRFLOW_HOME={0} && /opt/anaconda/bin/airflow initdb'.format(params.airflow_home_directory))
 
-        Execute('/opt/anaconda/bin/pip3 uninstall SQLAlchemy')
+        Execute('/opt/anaconda/bin/pip3 uninstall SQLAlchemy -y')
         Execute('/opt/anaconda/bin/pip3 install SQLAlchemy==1.3.15')
         try:
             self.configure_airflow(env)

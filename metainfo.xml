@@ -6,7 +6,7 @@
       <name>AIRFLOW_HL_NEW</name>
       <displayName>Airflow HL</displayName>
       <comment>Airflow is cool</comment>
-      <version>64</version>
+      <version>65</version>
       <components>
         <component>
           <name>Airflow</name>
