@@ -5,7 +5,7 @@ Wants=postgresql.service mysql.service redis.service rabbitmq-server.service
 
 [Service]
 Environment=AIRFLOW_HOME={{airflow_home_directory}}
-Environment=PATH={{binary_directory}}
+Environment=PATH={{binary_directory}}:$PATH
 User=root
 Group=root
 Type=simple
