@@ -12,6 +12,7 @@ class AirflowBase(Script):
         Execute('yum groupinstall -y "Development Tools"')
         Execute("/opt/anaconda/bin/pip3 install 'pyqtwebengine<5.13' --force-reinstall")
         Execute('/opt/anaconda/bin/pip3 install "pyqt5<5.13" --force-reinstall')
+
         Execute('/opt/anaconda/bin/pip3 install apache-airflow==1.10.6 --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-1-10/constraints-3.8.txt"')
         Directory(params.airflow_home_directory,
                   create_parents=True,
@@ -21,6 +22,8 @@ class AirflowBase(Script):
 
         Execute('export AIRFLOW_HOME={0} && /opt/anaconda/bin/airflow initdb'.format(params.airflow_home_directory))
 
+        Execute('/opt/anaconda/bin/pip3 uninstall SQLAlchemy')
+        Execute('/opt/anaconda/bin/pip3 install SQLAlchemy==1.3.15')
         try:
             self.configure_airflow(env)
         except ExecutionFailed as ef:
