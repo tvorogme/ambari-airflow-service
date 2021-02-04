@@ -3,10 +3,10 @@
   <schemaVersion>2.0</schemaVersion>
   <services>
     <service>
-      <name>AIRFLOW_CUSTOM_NEW</name>
+      <name>AIRFLOW_HL_NEW</name>
       <displayName>Airflow HL</displayName>
       <comment>Airflow is cool</comment>
-      <version>61</version>
+      <version>62</version>
       <components>
         <component>
           <name>Airflow</name>
